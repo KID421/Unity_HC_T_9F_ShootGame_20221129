@@ -2627,6 +2627,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edce88e9c283034cbc4f1037617b3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  speedWalk: 10.5
+  speedRun: 30.25
+  namePlayer: "\uFF03\u85A9\u6C23\uFF41\u5C0F\u5B69\uFF03"
+  isPass: 0
+  hasWeapon: 1
 --- !u!4 &523174712
 Transform:
   m_ObjectHideFlags: 0
@@ -3078,6 +3084,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1679e2eb6e9a6344c994a61f31e35389, type: 3}
       propertyPath: m_Name
       value: "\u8A6D\u7570\u5C11\u5973"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1679e2eb6e9a6344c994a61f31e35389, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 1679e2eb6e9a6344c994a61f31e35389, type: 3}
       propertyPath: m_Controller
@@ -9455,7 +9465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &992352264
 MonoBehaviour:
   m_ObjectHideFlags: 0
