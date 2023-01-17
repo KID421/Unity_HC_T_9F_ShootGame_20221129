@@ -43,6 +43,39 @@ namespace KID
         public bool hasWeapon = true;              // 是
         #endregion
 
+        // 欄位屬性 Field Attritube
+        // 作用：輔助欄位，例如：添加標題、說明、範圍限制以及空間等等..
+        // 語法：要放在欄位上方或前面
+        // [屬性名稱(值)]
+
+        // [標題(字串)]
+        [Header("玩家的血量")]
+        public int hp = 100;
+
+        public int 血量 = 999;    // 不建議，一個獨立開發，公司允許
+
+        // [說明(字串)]
+        [Tooltip("這是代表玩家現在擁有的武器名稱。")]
+        public string weapon = "美工刀";
+
+        // [範圍(最小值，最大值)] - 僅限於數值類型資料，例如：int、float
+        [Range(0, 10)]
+        public float speed = 3.5f;
+        [Range(0, 10)]
+        public bool isDead;     // 不能用在非數值資料上
+
+        // [序列化] - 將私人資料顯示在屬性面板上，保護資料並且顯示在屬性面板上
+        [SerializeField]
+        private string prop = "紅色藥水";
+
+        [SerializeField]
+        [Header("敵人數量")]
+        private int countEnemy = 3;
+
+        [SerializeField, Header("關卡數量"), Range(0, 30)]
+        private int numberLevel = 10;
+        #endregion
+
         #region 事件
         // 快速添加區域的方式：框選後按 Ctrl + K S
         private void Awake()
