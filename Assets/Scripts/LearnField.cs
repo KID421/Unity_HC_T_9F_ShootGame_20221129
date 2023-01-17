@@ -43,6 +43,7 @@ namespace KID
         public bool hasWeapon = true;              // 是
         #endregion
 
+        #region 欄位屬性
         // 欄位屬性 Field Attritube
         // 作用：輔助欄位，例如：添加標題、說明、範圍限制以及空間等等..
         // 語法：要放在欄位上方或前面
