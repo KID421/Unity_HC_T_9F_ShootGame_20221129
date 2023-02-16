@@ -1,37 +1,79 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace KID
 {
     /// <summary>
-    /// ¾Ç²ß«DÀRºA API
-    /// «ü¹CÀ¸¤ºªº¹êÅéª«¥ó¡A©Ò¥H¨Ï¥Î³oÃşªº API «e·|¥ı»İ­n¦³¤@­Óª«¥ó
+    /// å­¸ç¿’ééœæ…‹ API
+    /// æŒ‡éŠæˆ²å…§çš„å¯¦é«”ç‰©ä»¶ï¼Œæ‰€ä»¥ä½¿ç”¨é€™é¡çš„ API å‰æœƒå…ˆéœ€è¦æœ‰ä¸€å€‹ç‰©ä»¶
     /// </summary>
     public class LearnAPI : MonoBehaviour
     {
-        public Transform unityChan;     // ¸ê®ÆÃş«¬¨M©w´N¬O API Ãş§O
+        #region æ¬„ä½
+        public Transform unityChan;     // è³‡æ–™é¡å‹æ±ºå®šå°±æ˜¯ API é¡åˆ¥
 
         public Camera mainCamera;
 
         public Transform rabbit;
 
+        public Light mainLight;
+
+        public Transform girl;
+        #endregion
+
+        public BoxCollider cube;
+        public AudioSource testAudio;
+        public Canvas testCanvas;
+
+        public Rigidbody rigSphere;
+        public Transform testCube, testSphere;
+        public Transform testCapsule;
+
         private void Awake()
         {
-            // ¨BÆJ 1. ¥ı½T©w³õ´º¤W¦³¹êÅéª«¥ó¦s¦b
-            // ¨BÆJ 2. ©w¸q¸Óª«¥óªºÄæ¦ì (¨M©w¸ê®ÆÃş«¬)
-            // ¨BÆJ 3. ¦s¨ú«DÀRºAÄİ©Ê©Î¤èªk
+            // æ­¥é©Ÿ 1. å…ˆç¢ºå®šå ´æ™¯ä¸Šæœ‰å¯¦é«”ç‰©ä»¶å­˜åœ¨
+            // æ­¥é©Ÿ 2. å®šç¾©è©²ç‰©ä»¶çš„æ¬„ä½ (æ±ºå®šè³‡æ–™é¡å‹)
+            // æ­¥é©Ÿ 3. å­˜å–ééœæ…‹å±¬æ€§æˆ–æ–¹æ³•
 
-            // «DÀRºAÄİ©Ê Properties
-            // 1. ¨ú±o«DÀRºAÄİ©Ê
-            // »yªk¡G
-            // Äæ¦ì¦WºÙ.«DÀRºAÄİ©Ê
-            print($"<color=#ff6633>Unity Âæªº®y¼Ğ¡G{ unityChan.position }</color>");
+            // ééœæ…‹å±¬æ€§ Properties
+            // 1. å–å¾—ééœæ…‹å±¬æ€§
+            // èªæ³•ï¼š
+            // æ¬„ä½åç¨±.ééœæ…‹å±¬æ€§
+            print($"<color=#ff6633>Unity é†¬çš„åº§æ¨™ï¼š{ unityChan.position }</color>");
 
-            print($"<color=#ff6633>Äá¼v¾÷ªº²`«×¡G { mainCamera.depth }</color>");
+            print($"<color=#ff6633>æ”å½±æ©Ÿçš„æ·±åº¦ï¼š { mainCamera.depth }</color>");
 
-            // 2. ³]©w«DÀRºAÄİ©Ê
-            // »yªk¡G
-            // Äæ¦ì¦WºÙ.«DÀRºAÄİ©Ê «ü©w ­È¡F
+            // 2. è¨­å®šééœæ…‹å±¬æ€§
+            // èªæ³•ï¼š
+            // æ¬„ä½åç¨±.ééœæ…‹å±¬æ€§ æŒ‡å®š å€¼ï¼›
             rabbit.localScale = Vector3.one * 10;
+
+            mainLight.color = new Color(1, 0.3f, 0.3f);
+        }
+
+        private void Start()
+        {
+            print($"<color=#66ff99>{ cube.size }</color>");
+            print($"<color=#66ff99>{ testAudio.volume }</color>");
+            print($"<color=#66ff99>{ testCanvas.renderMode }</color>");
+
+            cube.center = new Vector3(1, 3, 1);
+            testAudio.volume = 0.5f;
+            testCanvas.renderMode = RenderMode.WorldSpace;
+
+            rigSphere.AddForce(0, 1500, 0);     // çƒé«”å¾€ä¸Šæ¨
+        }
+
+        private void Update()
+        {
+            // ééœæ…‹æ–¹æ³• Methods
+            // 3. ä½¿ç”¨ééœæ…‹æ–¹æ³•
+            // èªæ³•ï¼š
+            // æ¬„ä½åç¨±.ééœæ…‹æ–¹æ³•(å°æ‡‰çš„å¼•æ•¸)ï¼›
+            girl.Rotate(0, 30, 0);
+
+            testCube.LookAt(testSphere);        // ç«‹æ–¹é«” é¢å‘ çƒé«”
+
+            testCapsule.Translate(0, 0, 3);     // è† å›Š å¾€ Z ç§»å‹•
         }
     }
 }
