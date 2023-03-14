@@ -839,6 +839,8 @@ MonoBehaviour:
   - {fileID: 138629534}
   countMin: 2
   countMax: 5
+  boxRandom: []
+  prefabMarbleCanEat: {fileID: 1871781013658058399, guid: 4db6cfd4b3cf3b04d9218e604599c9ac, type: 3}
 --- !u!4 &76596860
 Transform:
   m_ObjectHideFlags: 0
