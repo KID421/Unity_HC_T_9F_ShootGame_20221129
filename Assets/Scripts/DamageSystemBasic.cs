@@ -37,14 +37,14 @@ namespace KID
             // 文字血量 的 文字 = 資料 的 血量 轉為字串
             textHp.text = data.hp.ToString();
 
-            GetDamage(99999);
+            // GetDamage(99999);
         }
 
         /// <summary>
         /// 受傷
         /// </summary>
         /// <param name="damage">受到的傷害值</param>
-        private void GetDamage(float damage)
+        public void GetDamage(float damage)
         {
             // 設定觸發器(觸發器名稱)
             ani.SetTrigger(parDamage);
