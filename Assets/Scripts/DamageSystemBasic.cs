@@ -11,7 +11,7 @@ namespace KID
     {
         #region 資料
         [SerializeField, Header("基本資料")]
-        private DataBasic data;
+        protected DataBasic data;
         [SerializeField, Header("畫布傷害值")]
         private GameObject prefabDamage;
         [SerializeField, Header("圖片血條")]
@@ -83,10 +83,18 @@ namespace KID
             Destroy(temp, 1);
         }
 
+        // 修飾詞：定義資料存取權限
+        // 1. private   私人：僅限此類別存取
+        // 2. public    公開：所有類別皆可存取
+        // 3. protected 保護：子類別可以存取
+
+        // 虛擬：virtual
+        // 允許子類別使用 override 覆寫
+
         /// <summary>
         /// 死亡
         /// </summary>
-        private void Dead()
+        protected virtual void Dead()
         {
             hp = 0;         // 血量歸零
         }

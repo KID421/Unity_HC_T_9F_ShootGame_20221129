@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196befbbe527ec541a0128c012014d19, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a215ef066419e645b5712f18a187c39, type: 3}
   m_Name: "\u5154\u5B50"
   m_EditorClassIdentifier: 
-  hp: 500
+  hp: 200
   attack: 50
+  prefabCoin: {fileID: 3843407249987726141, guid: 402ec811bc7a92e4eb6d9592fbfa4722, type: 3}
+  coinDropCount: 30
+  coinProbability: 0.8
