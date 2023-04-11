@@ -1662,7 +1662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedTurn: 10.5
-  countMarbleTotal: 10
+  countMarbleTotal: 2
   speedMarble: 1500
   intervalShoot: 0.2
   prefabMarble: {fileID: 5096198077180218311, guid: 0053779ae726e9a498c33ba883b13b3f, type: 3}
@@ -1700,6 +1700,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameMarble: "\u5F48\u73E0"
+  timeMove: 1.2
+  timeSpawn: 0.5
+  textFloor: {fileID: 883281261}
+  countEatMarble: 0
 --- !u!65 &218824167
 BoxCollider:
   m_ObjectHideFlags: 0

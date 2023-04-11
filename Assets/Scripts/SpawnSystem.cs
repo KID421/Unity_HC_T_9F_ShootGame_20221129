@@ -36,13 +36,13 @@ namespace KID
         /// <summary>
         /// 生成怪物
         /// </summary>
-        private void Spawn()
+        public void Spawn()
         {
             int random = Random.Range(countMin, countMax + 1);
-            print($"<color=#ff6699>要生成的怪物數量：{ random }</color>");
+            // print($"<color=#ff6699>要生成的怪物數量：{ random }</color>");
 
             int countToDelete = boxSecond.Length - random;
-            print($"<color=#ff6699>要刪除的格子數量：{ countToDelete }</color>");
+            // print($"<color=#ff6699>要刪除的格子數量：{ countToDelete }</color>");
 
             // 1. 打亂清單
             // 清單 = 陣列.轉為清單
