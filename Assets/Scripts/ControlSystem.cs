@@ -12,7 +12,7 @@ namespace KID
         [SerializeField, Header("旋轉速度"), Range(0, 60)]
         private float speedTurn = 10.5f;
         [SerializeField, Header("可發射彈珠數量"), Range(0, 100)]
-        private int countMarbleTotal = 10;
+        public int countMarbleTotal = 10;
         [SerializeField, Header("彈珠速度"), Range(0, 5000)]
         private int speedMarble = 1500;
         [SerializeField, Header("發射間隔"), Range(0, 0.5f)]
@@ -100,6 +100,10 @@ namespace KID
 
                 // 條件 4
                 StartCoroutine(SpawnMarble());                      // 生成彈珠
+
+                // 關閉控制系統
+                // enabled 此元件啟動
+                enabled = false;
             }
         }
 

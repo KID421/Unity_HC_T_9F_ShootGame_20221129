@@ -22,7 +22,7 @@ namespace KID
         // 3. 兩者都沒有勾 Is Trigger
         private void OnCollisionEnter(Collision collision)
         {
-            print($"<color=#6699ff>碰到的物件 { collision.gameObject } </color>");
+            //print($"<color=#6699ff>碰到的物件 { collision.gameObject } </color>");
 
             // 如果 碰到物件的名稱 包含 彈珠 才會受傷
             // 包含 Contains 可放在字串後面
