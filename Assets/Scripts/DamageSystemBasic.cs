@@ -26,7 +26,7 @@ namespace KID
         private string parDamage = "觸發受傷";
         #endregion
 
-        private void Awake()
+        protected virtual void Awake()
         {
             // 解決腳本化物件資料不還原的方式
             // ※ 將腳本化物件儲存於欄位內
