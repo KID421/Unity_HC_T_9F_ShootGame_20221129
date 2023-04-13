@@ -13,6 +13,7 @@ namespace KID
     /// </summary>
     public class TurnSystem : MonoBehaviour
     {
+        #region 資料
         [SerializeField, Header("要回收的彈珠名稱")]
         private string nameMarble = "彈珠";
         [SerializeField, Header("敵人回合移動時間"), Range(0, 3)]
@@ -34,11 +35,15 @@ namespace KID
         // HideInInspector 將欄位隱藏 (大部分搭配 public)
         [HideInInspector]
         public int countEatMarble;
+        #endregion
+
+        private GameManager gameManager;
 
         private void Awake()
         {
             controlSystem = FindObjectOfType<ControlSystem>();
             spawnSystem = FindObjectOfType<SpawnSystem>();
+            gameManager = FindObjectOfType<GameManager>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -103,6 +108,19 @@ namespace KID
             // 更新可發射的彈珠數量
             controlSystem.countMarbleTotal += countEatMarble;
             countEatMarble = 0;
+
+            // 判定遊戲勝利，如果層數為最大層並且沒有敵人就勝利
+            if (floor == maxFloor)
+            {
+                // FindObjectsOfType 透過類型尋找複數物件，傳回所有指定類型物件 (陣列)
+                DamageEnemy[] enemys = FindObjectsOfType<DamageEnemy>();
+
+                // 如果 敵人陣列 數量 為 零 就獲勝
+                if (enemys.Length == 0)
+                {
+                    gameManager.StartShowFinalAndUpdateTitle("挑戰成功!!!");
+                }
+            }
         }
     }
 }
