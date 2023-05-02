@@ -32,7 +32,8 @@ namespace KID
                 AudioClip sound = SoundSystem.instance.soundEnemyHurt;
                 SoundSystem.instance.PlaySound(0.7f, 1.2f, sound);
 
-                GetDamage(100);
+                // 受到 玩家控制系統攻擊力 的傷害
+                GetDamage(ControlSystem.instance.data.attack);
             }
         }
 

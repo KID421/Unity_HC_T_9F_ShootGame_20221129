@@ -1669,6 +1669,7 @@ MonoBehaviour:
   pointSpawn: {fileID: 119917745}
   objArrow: {fileID: 484050207}
   pointMouse: {fileID: 1123375597}
+  data: {fileID: 11400000, guid: d2db2a940f97826499cc0d684a77d67b, type: 2}
 --- !u!95 &190946689 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 1679e2eb6e9a6344c994a61f31e35389, type: 3}
@@ -3929,7 +3930,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1679e2eb6e9a6344c994a61f31e35389, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1679e2eb6e9a6344c994a61f31e35389, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17633,7 +17634,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2047230681
 PrefabInstance:

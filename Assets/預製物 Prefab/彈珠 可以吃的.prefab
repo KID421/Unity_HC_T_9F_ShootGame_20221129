@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDistance: 2
+  endPosition: 1
+  data: {fileID: 0}
 --- !u!114 &-1168046150543192845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +83,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2781750004664059144}
     m_Modifications:
+    - target: {fileID: 4666777738750623002, guid: 0053779ae726e9a498c33ba883b13b3f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5096198076954408024, guid: 0053779ae726e9a498c33ba883b13b3f, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.6
@@ -148,6 +154,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5096198077180218312, guid: 0053779ae726e9a498c33ba883b13b3f, type: 3}
     - {fileID: -5066259374328380209, guid: 0053779ae726e9a498c33ba883b13b3f, type: 3}
+    - {fileID: 4666777738750623002, guid: 0053779ae726e9a498c33ba883b13b3f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0053779ae726e9a498c33ba883b13b3f, type: 3}
 --- !u!4 &7651065250728166587 stripped
 Transform:
