@@ -25,6 +25,10 @@ namespace KID
             coinTotal++;
             // 金幣介面更新
             textCoinCount.text = coinTotal.ToString();
+
+            // 先取得要播放的聲音再播放
+            AudioClip sound = SoundSystem.instance.soundEatCoin;
+            SoundSystem.instance.PlaySound(0.1f, 0.2f, sound);
         }
     }
 }

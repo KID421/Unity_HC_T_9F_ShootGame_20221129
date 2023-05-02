@@ -64,6 +64,15 @@ namespace KID
         /// </summary>
         private void Replay()
         {
+            // 先取得要播放的聲音再播放
+            AudioClip sound = SoundSystem.instance.soundButtonClick;
+            SoundSystem.instance.PlaySound(0.7f, 1.2f, sound);
+
+            Invoke("DelayReplay", 0.8f);
+        }
+
+        private void DelayReplay()
+        {
             // 重新載入目前場景
             string nameCurrent = SceneManager.GetActiveScene().name;    // 取得啟動中場景的名稱
             SceneManager.LoadScene(nameCurrent);                        // 載入指定場景名稱的場景
@@ -73,6 +82,15 @@ namespace KID
         /// 離開遊戲
         /// </summary>
         private void Quit()
+        {
+            // 先取得要播放的聲音再播放
+            AudioClip sound = SoundSystem.instance.soundButtonClick;
+            SoundSystem.instance.PlaySound(0.7f, 1.2f, sound);
+
+            Invoke("DelayQuit", 0.8f);
+        }
+
+        private void DelayQuit()
         {
             // 應用程式.離開 - Unity 與 Web 不執行
             Application.Quit();

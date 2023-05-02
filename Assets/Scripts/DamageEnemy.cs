@@ -28,6 +28,10 @@ namespace KID
             // 包含 Contains 可放在字串後面
             if (collision.gameObject.name.Contains(nameMarble))
             {
+                // 先取得要播放的聲音再播放
+                AudioClip sound = SoundSystem.instance.soundEnemyHurt;
+                SoundSystem.instance.PlaySound(0.7f, 1.2f, sound);
+
                 GetDamage(100);
             }
         }
@@ -37,6 +41,10 @@ namespace KID
         {
             // base 父類別原有的內容
             base.Dead();
+
+            // 先取得要播放的聲音再播放
+            AudioClip sound = SoundSystem.instance.soundEnemyDead;
+            SoundSystem.instance.PlaySound(0.7f, 1.2f, sound);
 
             // 呼叫掉落金幣
             DropCoin();

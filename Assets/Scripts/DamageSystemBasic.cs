@@ -44,7 +44,7 @@ namespace KID
         /// 受傷
         /// </summary>
         /// <param name="damage">受到的傷害值</param>
-        public void GetDamage(float damage)
+        public virtual void GetDamage(float damage)
         {
             // 設定觸發器(觸發器名稱)
             ani.SetTrigger(parDamage);

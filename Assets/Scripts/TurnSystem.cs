@@ -79,6 +79,10 @@ namespace KID
                 moveSystems[i].StartMove();
             }
 
+            // 先取得要播放的聲音再播放
+            AudioClip sound = SoundSystem.instance.soundEnemyMove;
+            SoundSystem.instance.PlaySound(0.7f, 1.2f, sound);
+
             Invoke("DelaySpawn", timeMove);
         }
 
@@ -119,6 +123,10 @@ namespace KID
                 if (enemys.Length == 0)
                 {
                     gameManager.StartShowFinalAndUpdateTitle("挑戰成功!!!");
+
+                    // 先取得要播放的聲音再播放
+                    AudioClip sound = SoundSystem.instance.soundGameWin;
+                    SoundSystem.instance.PlaySound(0.7f, 1.2f, sound);
                 }
             }
         }
